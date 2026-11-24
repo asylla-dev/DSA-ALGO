@@ -59,3 +59,12 @@ class LinkedList:
                 tmp = tmp.next
 
             return tmp
+
+        def set_value(self, index, value):
+            if index < 0 or index >= self.length:
+                return None
+            tmp = self.get(index)
+            if tmp is not None:
+                tmp.value = value
+                return True
+            return False
