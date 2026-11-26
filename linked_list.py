@@ -28,37 +28,37 @@ class LinkedList:
             self.head = None
             self.tail = None
 
-        def prepend(self, value):
-            new_node = Node(value)
-            if self.head is None:
-                self.head = new_node
-                self.tail = new_node
-            else:
-                new_node.next = self.head
-                self.head = new_node
-            self.length += 1
+    def prepend(self, value):
+        new_node = Node(value)
+        if self.head is None:
+            self.head = new_node
+            self.tail = new_node
+        else:
+            new_node.next = self.head
+            self.head = new_node
+        self.length += 1
 
-        def pop_first(self):
-            if self.head is None:
-                return None
+    def pop_first(self):
+        if self.head is None:
+            return None
 
-            tmp = self.head
-            self.head = self.head.next
-            tmp.next = None
-            self.length -= 1
-            if self.length == 0:
-                self.tail = None
-            return tmp
+        tmp = self.head
+        self.head = self.head.next
+        tmp.next = None
+        self.length -= 1
+        if self.length == 0:
+            self.tail = None
+        return tmp
 
-        def get(self, index):
-            if index < 0 or index >= self.length:
-                return None
+    def get(self, index):
+        if index < 0 or index >= self.length:
+            return None
 
-            tmp = self.head
-            for _ in range(index):
-                tmp = tmp.next
+        tmp = self.head
+        for _ in range(index):
+            tmp = tmp.next
 
-            return tmp
+        return tmp
 
         def set_value(self, index, value):
             if index < 0 or index >= self.length:
